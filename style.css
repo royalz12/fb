@@ -1,5 +1,5 @@
 body {
-  background: #222;
+  background-color: #121212;
   color: white;
   font-family: sans-serif;
   display: flex;
@@ -11,40 +11,38 @@ body {
 .keyboard {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .row {
   display: flex;
-  gap: 6px;
+  gap: 4px;
+  justify-content: center;
 }
 
 .key {
-  width: 48px;
-  height: 48px;
-  background: #0af;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 6px;
-  font-weight: bold;
+  background-color: #333;
+  border: 1px solid #555;
+  padding: 10px;
+  min-width: 40px;
+  text-align: center;
+  border-radius: 4px;
   user-select: none;
 }
 
 .key.wide {
-  width: 72px;
+  min-width: 60px;
 }
 
-.key.extra-wide {
-  width: 240px;
+.key.wider {
+  min-width: 80px;
 }
 
 .key.space {
-  justify-content: center;
+  min-width: 240px;
 }
 
-.key.empty {
-  width: 48px;
-  height: 48px;
-  visibility: hidden;
+.key.pressed {
+  background-color: #00bcd4;
+  color: black;
 }
