@@ -2,14 +2,30 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>핑거댄스 키보드</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Finger Dance - Key Mapping</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="keyboard">
     <!-- 1행 -->
     <div class="row">
-      <div class="key">`</div>
+      <div class="key">ESC</div>
+      <div class="key">F1</div>
+      <div class="key">F2</div>
+      <div class="key">F3</div>
+      <div class="key">F4</div>
+      <div class="key">F5</div>
+      <div class="key">F6</div>
+      <div class="key">F7</div>
+      <div class="key">F8</div>
+      <div class="key">F9</div>
+      <div class="key">F10</div>
+      <div class="key">F11</div>
+      <div class="key">F12</div>
+    </div>
+    <!-- 2행 -->
+    <div class="row">
+      <div class="key">~</div>
       <div class="key">1</div>
       <div class="key">2</div>
       <div class="key">3</div>
@@ -22,12 +38,11 @@
       <div class="key">0</div>
       <div class="key">-</div>
       <div class="key">=</div>
-      <div class="key wide">Back</div>
+      <div class="key special" style="grid-column: span 2">Backspace</div>
     </div>
-
-    <!-- 2행 -->
+    <!-- 3행 -->
     <div class="row">
-      <div class="key wide">Tab</div>
+      <div class="key special" style="grid-column: span 1.5">Tab</div>
       <div class="key">Q</div>
       <div class="key">W</div>
       <div class="key">E</div>
@@ -42,10 +57,9 @@
       <div class="key">]</div>
       <div class="key">\</div>
     </div>
-
-    <!-- 3행 -->
+    <!-- 4행 -->
     <div class="row">
-      <div class="key wide">Caps</div>
+      <div class="key special" style="grid-column: span 1.8">Caps</div>
       <div class="key">A</div>
       <div class="key">S</div>
       <div class="key">D</div>
@@ -57,12 +71,11 @@
       <div class="key">L</div>
       <div class="key">;</div>
       <div class="key">'</div>
-      <div class="key wide">Enter</div>
+      <div class="key special" style="grid-column: span 2">Enter</div>
     </div>
-
-    <!-- 4행 -->
+    <!-- 5행 -->
     <div class="row">
-      <div class="key wide">Shift</div>
+      <div class="key special" style="grid-column: span 2">Shift</div>
       <div class="key">Z</div>
       <div class="key">X</div>
       <div class="key">C</div>
@@ -73,20 +86,22 @@
       <div class="key">,</div>
       <div class="key">.</div>
       <div class="key">/</div>
-      <div class="key wide">Shift</div>
+      <div class="key special" style="grid-column: span 2">Shift</div>
     </div>
-
-    <!-- 5행 -->
+    <!-- 6행 -->
     <div class="row">
-      <div class="key wide">Ctrl</div>
-      <div class="key empty"></div>
-      <div class="key empty"></div>
-      <div class="key space extra-wide">Space</div>
-      <div class="key empty"></div>
-      <div class="key empty"></div>
+      <div class="key special">Ctrl</div>
+      <div class="key special">Win</div>
+      <div class="key special">Alt</div>
+      <div class="key special" style="grid-column: span 5">Space</div>
+      <div class="key special">Alt</div>
+      <div class="key special">Win</div>
+      <div class="key special">Menu</div>
+      <div class="key special">Ctrl</div>
     </div>
   </div>
-
+  
   <script src="main.js"></script>
+  <script src="inputMapper.js"></script>
 </body>
 </html>
