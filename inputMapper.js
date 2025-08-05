@@ -1,26 +1,39 @@
-let mappedKeys = [];
+const pressedKeys = new Set();
 
-export function startKeyMapping(onComplete) {
-  mappedKeys = [];
-  let keyDowns = new Set();
+function startKeyMapping() {
+  document.querySelectorAll('.key').forEach(key => {
+    key.dataset.originalColor = key.style.backgroundColor;
+  });
 
-  const handleKeyDown = (e) => {
-    const key = e.key.toUpperCase();
-    if (!keyDowns.has(key)) {
-      keyDowns.add(key);
-      mappedKeys.push(key);
-      document.getElementById("status").textContent = `입력 중: ${Array.from(keyDowns).join(", ")}`;
+  document.addEventListener('keydown', e => {
+    const keyEl = findKeyElement(e);
+    if (keyEl) {
+      keyEl.classList.add('pressed');
+      pressedKeys.add(e.key);
     }
+  });
 
-    if (keyDowns.size >= 5) {
-      document.removeEventListener("keydown", handleKeyDown);
-      onComplete(Array.from(keyDowns));
+  document.addEventListener('keyup', e => {
+    const keyEl = findKeyElement(e);
+    if (keyEl) {
+      keyEl.classList.remove('pressed');
+      pressedKeys.delete(e.key);
     }
-  };
-
-  document.addEventListener("keydown", handleKeyDown);
+  });
 }
 
-export function getMappedKeys() {
-  return mappedKeys;
+function findKeyElement(e) {
+  const display = e.key.length === 1 ? e.key.toUpperCase() : specialMap[e.key];
+  return [...document.querySelectorAll('.key')].find(k => k.textContent === display);
 }
+
+const specialMap = {
+  ' ': 'Space',
+  'Shift': 'Shift',
+  'CapsLock': 'Caps',
+  'Tab': 'Tab',
+  'Enter': 'Enter',
+  'Backspace': 'Back',
+  'Control': 'Ctrl',
+  'Escape': 'Esc'
+};
