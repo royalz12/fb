@@ -1,19 +1,50 @@
+body {
+  background: #222;
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .row {
-  display: block;
-  white-space: nowrap;
+  display: flex;
+  gap: 6px;
 }
 
 .key {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  margin: 2px;
-  background-color: #444;
-  color: white;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 5px;
+  width: 48px;
+  height: 48px;
+  background: #0af;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
   font-weight: bold;
   user-select: none;
-  transition: background-color 0.1s;
+}
+
+.key.wide {
+  width: 72px;
+}
+
+.key.extra-wide {
+  width: 240px;
+}
+
+.key.space {
+  justify-content: center;
+}
+
+.key.empty {
+  width: 48px;
+  height: 48px;
+  visibility: hidden;
 }
