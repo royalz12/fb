@@ -1,43 +1,19 @@
-body {
-  background-color: #2c2c2c;
-  color: white;
-  font-family: sans-serif;
-  text-align: center;
-  padding: 20px;
-}
-
-#status {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-.keyboard {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-}
-
 .row {
-  display: flex;
-  gap: 6px;
-  justify-content: center;
+  display: block;
+  white-space: nowrap;
 }
 
 .key {
+  display: inline-block;
   width: 40px;
   height: 40px;
+  margin: 2px;
   background-color: #444;
   color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 5px;
   font-weight: bold;
   user-select: none;
   transition: background-color 0.1s;
-}
-
-.key.active {
-  background-color: #3498db;
 }
