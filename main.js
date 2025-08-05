@@ -1,13 +1,18 @@
-import { startKeyMapping } from "./inputMapper.js";
+import { startKeyMapping, getMappedKeys } from './inputMapper.js';
+import { renderKeyboard, highlightKey } from './keyboardRenderer.js';
 
-// 초기 진입 시 키매핑 시작
 window.addEventListener("DOMContentLoaded", () => {
-  startKeyMapping();
-});
+  renderKeyboard("keyboard");
 
-// Esc 키 누르면 다시 키매핑 시작
-window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    startKeyMapping();
-  }
+  startKeyMapping((mapped) => {
+    document.getElementById("status").textContent = `매핑 완료: ${mapped.join(", ")}`;
+  });
+
+  document.addEventListener("keydown", (e) => {
+    highlightKey(e.key, true);
+  });
+
+  document.addEventListener("keyup", (e) => {
+    highlightKey(e.key, false);
+  });
 });
